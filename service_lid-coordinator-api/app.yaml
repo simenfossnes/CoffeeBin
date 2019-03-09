@@ -1,0 +1,19 @@
+runtime: nodejs
+env: flex
+
+handlers:
+- url: /socket-io
+  static_dir: socket-io
+  http_headers:
+    Access-Control-Allow-Origin: http://localhost:3000
+
+manual_scaling:
+  instances: 1
+
+resources:
+  cpu: 1
+  memory_gb: 0.5
+  disk_size_gb: 10
+
+network:
+  session_affinity: true
