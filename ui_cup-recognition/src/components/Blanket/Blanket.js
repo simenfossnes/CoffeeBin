@@ -14,7 +14,6 @@ class Blanket extends React.Component {
     render() {
 
         const { isActive, showExit, onExit, fadeInSpeed, fadeOutSpeed } = this.props;
-        console.log('SHIT: ', styles);
 
         return (
             <div
