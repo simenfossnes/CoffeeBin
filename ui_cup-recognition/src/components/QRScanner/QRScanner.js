@@ -96,7 +96,7 @@ class QRScanner extends React.Component {
 
     this.setState({ QRCodeIsValid: true });
 
-    this.callAPI();
+    this.callAPI(code.data);
   };
 
   validateQRCode = data => {
@@ -106,8 +106,9 @@ class QRScanner extends React.Component {
 
   // implement leading debounce the api call to a time > setInterval
   callAPI = debounce(
-    () => {
-      console.log("call API");
+    (data) => {
+      window.socketConnection.emit('cup dropoff', data);
+      console.log("API call complete.");
     },
     500,
     {

@@ -3,6 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import io from 'socket.io-client';
+
+// connect to webSocket API
+const socket = io('https://coffeebin.appspot.com');
+window.socketConnection = socket;
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
