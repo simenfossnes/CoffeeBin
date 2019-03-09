@@ -5,19 +5,6 @@ import Blanket from '../Blanket';
 var debounce = require('lodash.debounce');
 
 
-// hmm, seems like we need access to the phone camera
-// directly here to get a stream. This could be an issue
-// since this would require native access.
-// we might have to add cordova to this project to access
-// some native apis like the camera.
-
-// could also use the <input type="file" accept="image/*" capture="camera">
-// https://stackoverflow.com/questions/8581081/how-to-access-a-mobiles-camera-from-a-web-app
-// tag, but this would make the experience alot less smooth.
-// need to think and discuss this a bit more.
-
-// ok, there is an actual solution to this. wow.
-// https://youtu.be/z9unKFzAj1w?t=1904
 class QRScanner extends React.Component {
 
     state = {
@@ -92,6 +79,5 @@ class QRScanner extends React.Component {
     'trailing': false
   })
 }
-
 
 export default QRScanner;
