@@ -15,7 +15,7 @@
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-    background-color: rgba(31, 35, 46, .9);
+    background-color: var(--blanketColor, rgba(31, 35, 46, 0.9));
     -webkit-transition: 
       opacity var(--fadeInSpeed, 500ms) cubic-bezier(.25, .46, .45, .94),
       transform 0ms cubic-bezier(.25, .46, .45, .94) 0ms;

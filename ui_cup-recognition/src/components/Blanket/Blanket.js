@@ -6,6 +6,7 @@ class Blanket extends React.Component {
     static defaultProps = {
         isActive: false,
         showExit: true,
+        color: 'rgba(31, 35, 46, 0.9)',
         fadeInSpeed: 500,
         fadeOutSpeed: 500,
         onExit: undefined,
@@ -13,13 +14,14 @@ class Blanket extends React.Component {
     
     render() {
 
-        const { isActive, showExit, onExit, fadeInSpeed, fadeOutSpeed } = this.props;
+        const { isActive, showExit, color, onExit, fadeInSpeed, fadeOutSpeed } = this.props;
 
         return (
             <div
                 style={{
                     '--fadeInSpeed': fadeInSpeed+'ms',
-                    '--fadeOutSpeed': fadeOutSpeed+'ms'
+                    '--fadeOutSpeed': fadeOutSpeed+'ms',
+                    '--blanketColor': color,
                 }} 
                 className={`${styles.blanket} ${!isActive ? styles.inactive : ''}`}>
                 {showExit && 
