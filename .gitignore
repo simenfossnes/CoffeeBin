@@ -4,7 +4,7 @@ node_modules/
 package-lock.json*
 .firebase/
 .firebaserc*
-
+build/
 
 # Firebase ignore
 # Logs
