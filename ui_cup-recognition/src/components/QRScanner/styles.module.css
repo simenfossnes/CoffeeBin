@@ -1,5 +1,16 @@
 .QRScannerContainer {
     width: 100vw;
     height: 100vh;
-    background-color: lightblue;
+    background-color: black;
+}
+
+.video {
+    display: none;
+}
+
+.canvas {
+    height: 99%;
+    width: 99%;
+    margin: 0;
+    padding: 0;
 }
