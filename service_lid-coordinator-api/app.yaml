@@ -5,7 +5,9 @@ handlers:
 - url: /socket-io
   static_dir: socket-io
   http_headers:
-    Access-Control-Allow-Origin: http://localhost:3000
+    Access-Control-Allow-Origin: 
+      http://localhost:3000,
+      https://coffeebin-f36d2.firebaseapp.com/
 
 manual_scaling:
   instances: 1
