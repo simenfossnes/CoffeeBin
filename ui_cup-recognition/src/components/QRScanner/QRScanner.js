@@ -87,7 +87,7 @@ class QRScanner extends React.Component {
     // implement leading debounce the api call to a time > setInterval
   callAPI = debounce(() => {
       console.log('call API');
-  }, 300, {
+  }, 500, {
     'leading': true,
     'trailing': false
   })
