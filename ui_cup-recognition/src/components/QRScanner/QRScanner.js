@@ -1,6 +1,8 @@
 import React from "react";
 import jsQR from "jsqr";
 import styles from "./styles.module.css";
+import Blanket from '../Blanket';
+var debounce = require('lodash.debounce');
 
 
 // hmm, seems like we need access to the phone camera
@@ -32,7 +34,7 @@ class QRScanner extends React.Component {
     async componentDidMount() {
         this.videoRef.current.srcObject = await navigator.mediaDevices.getUserMedia({ video: true });
         await this.videoRef.current.play();
-        this.setInterval = setInterval(this.detectQRCode, 3000);
+        this.setInterval = setInterval(this.detectQRCode, 200);
         this.draw();
     }
   
@@ -40,7 +42,7 @@ class QRScanner extends React.Component {
         const { qrDetected } = this.state;
     return (
       <div className={styles.QRScannerContainer}>
-        {qrDetected && <h1>aorise ntoaresi tn</h1>}
+        {qrDetected && <Blanket showExit={false} isActive={qrDetected} />}
         <video className={styles.video} ref={this.videoRef} muted />
         <canvas className={styles.canvas} ref={this.canvasRef} />
       </div>
@@ -78,8 +80,17 @@ class QRScanner extends React.Component {
     }
 
     this.setState({qrDetected: true});
+    this.callAPI();
     // trigger API call here
   }
+
+    // implement leading debounce the api call to a time > setInterval
+  callAPI = debounce(() => {
+      console.log('call API');
+  }, 300, {
+    'leading': true,
+    'trailing': false
+  })
 }
 
 
