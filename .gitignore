@@ -5,6 +5,9 @@ package-lock.json*
 .firebase/
 .firebaserc*
 build/
+dist/
+.env*
+.DS_Store*
 
 # Firebase ignore
 # Logs
