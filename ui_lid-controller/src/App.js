@@ -13,15 +13,27 @@ class App extends Component {
     const { isDropping } = this.state;
     return (
       <div className="App">
-        <CoffeeCup dropping={isDropping} style={{width: '50vmin'}}/>
-        <CoffeeBinLid open={isDropping}/>
+        <button onClick={this.dropACup}>drop a coffee</button>
+        <div className={'cup-container'}>
+          <CoffeeCup dropping={isDropping} style={{width: '50vmin'}}/>
+        </div>
+        <CoffeeBinLid isOpen={isDropping} />
       </div>
     );
   }
 
   componentDidMount() {
     // listen for server event - trigger animation of the two components.
-    
+
+  }
+
+  dropACup = () =>{
+    this.toggleIsDropping();
+    setTimeout(this.toggleIsDropping, 500);
+  }
+
+  toggleIsDropping = () => {
+    this.setState(prevState => ({isDropping: !prevState.isDropping}))
   }
 
 }

@@ -4,7 +4,7 @@ import './styles.css';
 class CoffeeCup extends React.Component {
     render() {
         return (
-            <svg id="Layer_1" data-name="Layer 1" width={'50vmin'} viewBox="0 0 250 300">
+            <svg id="CofeeCup" data-name="Layer 1" viewBox="0 0 250 300">
                 <path className="cls-1" d="M33 73l20 202h74V73H33z" />
                 <path className="cls-1" d="M216 73l-20 202h-74V73h94z" />
                 <path className="cls-2" d="M24 50h201v28H24z" />
