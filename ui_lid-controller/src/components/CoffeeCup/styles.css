@@ -1,5 +1,5 @@
 .cls-1 {
-  fill: #b2e5ed;
+  fill: #b9edb2;
 }
 
 .cls-2 {
@@ -10,6 +10,29 @@
   fill: #d3d3d3;
 }
 
-#CofeeCup {
+.CoffeeCup {
     height: 80vh;
+    -webkit-transition: -webkit-transform 300ms ease 100ms;
+    transition: -webkit-transform 300ms ease 100ms;
+    -o-transition: transform 300ms ease 100ms;
+    transition: transform 300ms ease 100ms;
+    transition: transform 300ms ease 100ms, -webkit-transform 300ms ease 100ms;
+}
+
+.CoffeeCup.cc-top {
+    -webkit-transform: translate(0, 20vh);
+    -ms-transform: translate(0, 20vh);
+        transform: translate(0, 20vh);
+        z-index: 3;
+    -webkit-transition: -webkit-transform 0ms ease 500ms;
+    transition: -webkit-transform 0ms ease 500ms;
+    -o-transition: transform 0ms ease 500ms;
+    transition: transform 0ms ease 500ms;
+    transition: transform 0ms ease 500ms, -webkit-transform 0ms ease 500ms;
+}
+
+.CoffeeCup.cc-bottom {
+    -webkit-transform: translate(0, 100vh);
+    -ms-transform: translate(0, 100vh);
+        transform: translate(0, 100vh);
 }

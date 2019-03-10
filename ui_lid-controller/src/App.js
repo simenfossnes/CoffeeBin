@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 import CoffeeBinLid from './components/CoffeeBinLid';
 import CoffeeCup from './components/CoffeeCup';
+import io from 'socket.io-client';
+
+const socket = io('https://coffeebin.appspot.com');
+
 
 class App extends Component {
 
@@ -13,9 +17,11 @@ class App extends Component {
     const { isDropping } = this.state;
     return (
       <div className="App">
-        <button onClick={this.dropACup}>drop a coffee</button>
+        <h1 style={{position: 'absolute', top: 0, left: 0}} onClick={this.dropACup}>
+          {isDropping ? 'Cup detected and dropping' : 'Waiting for Cup...'}
+        </h1> 
         <div className={'cup-container'}>
-          <CoffeeCup dropping={isDropping} style={{width: '50vmin'}}/>
+          <CoffeeCup isDropped={isDropping} style={{width: '50vmin'}}/>
         </div>
         <CoffeeBinLid isOpen={isDropping} />
       </div>
@@ -24,7 +30,7 @@ class App extends Component {
 
   componentDidMount() {
     // listen for server event - trigger animation of the two components.
-
+    socket.on('cupDropoffReceipt', this.dropACup);
   }
 
   dropACup = () =>{
